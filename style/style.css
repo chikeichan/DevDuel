@@ -26,4 +26,15 @@ img {
   height: 200px;
   border-radius: 100px;
   border: 2px solid black;
+  display: inline-block;
+}
+
+span#name {
+	font-size: 25px;
+}
+
+div#vitals {
+  display: inline-block;
+  text-align: left;
+  padding-left: 70px;
 }

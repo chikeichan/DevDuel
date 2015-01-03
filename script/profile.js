@@ -10,11 +10,18 @@ var Profile = Backbone.Model.extend({
 
 var ProfileView = Backbone.View.extend({
 	template: _.template('<img src="<%= avatar_url %>"></img> \
-											   <span id="name"><%= name %></span> \
-											   <span id="location"><%= location %></span> \
-											   <span id="created_at">Developing since <%= created_at %></span>'),
+												<div id="vitals"> \
+											   <span id="name"><%= name %></span><br> \
+											   <span id="location"><%= location %></span><br> \
+											   <span id="created_at">Developing since <%= created_at %></span><br> \
+											  </div>'),
 	render: function(){
 		console.log(this.model.attributes)
 		this.$el.html(this.template(this.model.attributes));
+	},
+	initialize: function(){
+		this.model.on('sync',function(){
+			this.render();
+		},this)
 	}
 })
