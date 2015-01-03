@@ -9,17 +9,16 @@
 		<script src="bower_components/backbone/backbone.js"></script>
 		<!-- APPLICATION -->
 		<script src="script/data.js"></script>
+		<script src="script/profile.js"></script>
 		<script src="script/app.js"></script>
 
 	</head>
 	<body>
 		<h1>DevDuel</h1>
-		<form class='git'>
 			<input id='query' type='text' value='Your username here...'></input>
 			<select id='username'>
 				<option value='blank'></option>
 			</select>
-		</form>
 		<div class='profiles'>
 			<div id='info'></div>
 			<div id='stats'>
@@ -39,4 +38,16 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$('#query').on('click',function(){
+			$(this).val('');
+		}).on('keydown',function(e){
+			if(e.keyCode === 13){
+				var username = $(this).val();
+				$(this).val('');
+				window.profile = new Profile({login: username});
+				window.profileView = new ProfileView({el:$('div#info'), model: profile});
+			}
+		})
+	</script>
 </html>

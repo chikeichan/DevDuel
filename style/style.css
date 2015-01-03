@@ -1,5 +1,6 @@
 body {
 	text-align: center;
+  background-color: lightgrey;
 }
 
 table {
@@ -10,4 +11,19 @@ table {
 
 td {
 	border: 1px solid black;
+}
+
+div#info {
+  width: 75%;
+  margin: 0 auto 0 auto;
+  padding: 20px;
+  height: 200px;
+  background-color: white;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: 2px solid black;
 }
