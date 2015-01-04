@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<title>DevDuel</title>
+		<link rel='stylesheet' type='text/css' href='style/style.css'>
+		<!-- DEPENDENCIES -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/underscore/underscore-min.js"></script>
+		<script src="bower_components/backbone/backbone.js"></script>
+		<!-- APPLICATION -->
+		<script src="models/developer.js"></script>
+		<script src="models/profile.js"></script>
+		<script src="models/app.js"></script>`
+
+	</head>
+	<body>
+		<h1>DevDuel</h1>
+			<input id='query' type='text' value='Your username here...'></input>
+			<select id='username'>
+				<option value='blank'></option>
+			</select>
+		<div class='profiles'>
+			<div id='info'></div>
+			<div id='stats'>
+				<table>
+					<tr>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+						<td>CATEGORY</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+	<script>
+		$('#query').on('click',function(){
+			$(this).val('');
+		}).on('keydown',function(e){
+			if(e.keyCode === 13){
+				var username = $(this).val();
+				$(this).val('');
+				window.profile = new Profile({login: username});
+				window.profileView = new ProfileView({el:$('div#info'), model: profile});
+			}
+		})
+	</script>
+</html>
