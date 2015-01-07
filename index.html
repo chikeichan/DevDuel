@@ -2,15 +2,15 @@
 <html>
 	<head>
 		<title>DevDuel</title>
-		<link rel='stylesheet' type='text/css' href='style/style.css'>
+		<link rel='stylesheet' type='text/css' href='client/style/style.css'>
 		<!-- DEPENDENCIES -->
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/underscore/underscore-min.js"></script>
-		<script src="bower_components/backbone/backbone.js"></script>
+		<script src="client/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="client/bower_components/underscore/underscore-min.js"></script>
+		<script src="client/bower_components/backbone/backbone.js"></script>
 		<!-- APPLICATION -->
-		<script src="script/data.js"></script>
-		<script src="script/profile.js"></script>
-		<script src="script/app.js"></script>
+		<script src="client/models/app.js"></script>
+		<script src="client/models/profile.js"></script>
+		<script src="client/models/repos.js"></script>
 
 	</head>
 	<body>
@@ -23,16 +23,18 @@
 			<div id='info'></div>
 			<div id='stats'>
 				<table>
-					<tr>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
-						<td>CATEGORY</td>
+					<tr class='header'>
+						<td>Name</td>
+						<td>OWN</td>
+						<td>LOC+</td>
+						<td>LOC-</td>
+						<td>CMT</td>
+						<td>PRs</td>
+						<td>MER</td>
+						<td>STR</td>
+						<td>FRK</td>
+						<td>ISS</td>
+						<td>Comments</td>
 					</tr>
 				</table>
 			</div>
